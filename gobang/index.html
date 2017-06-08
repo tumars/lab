@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生js写五子棋</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="info"></div>
+    <div id="root"></div>
+    <script src="index.js"></script>
+    <script>
+        // 初始化游戏，（棋盘大小，{结束事件，落子事件}）
+        Game.start(15,{
+            onEnd(color) {
+                alert(`游戏结束, ${color === 1 ? '白子' : '黑子'}胜利`)
+            },
+            onKeep(color) {
+                document.getElementById('info').innerHTML = `${color !== 1 ? '白子' : '黑子'}回合`
+            }
+        })
+    </script>
+</body>
+</html>
