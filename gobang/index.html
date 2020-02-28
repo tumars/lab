@@ -18,10 +18,15 @@
             onEnd(color) {
                 alert(`游戏结束, ${color === 1 ? '白子' : '黑子'}胜利`)
             },
-            onKeep(color) {
+            onKeep(color, x, y, gobang) {
                 document.getElementById('info').innerHTML = `${color !== 1 ? '白子' : '黑子'}回合`
+                // console.log(color)
+                color == 1 && Game.autoPress(gobang)(2)
+                // AI.getCoord(x, y, color) 
             }
         })
+
+        // AI.initAI(15)
     </script>
 </body>
 </html>
